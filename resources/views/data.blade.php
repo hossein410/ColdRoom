@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClodRoom</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
     <style>
         @font-face {
             font-family: 'Vazir';
@@ -42,6 +44,25 @@
             justify-content: space-between;
             margin-bottom: 5px;
         }
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -50,15 +71,15 @@
     @foreach ($data as $item)
         <div class="grid-item" onclick="goToPage('{{ $item['id'] }}')">
             <div>
-                <p>دما:</p>
+                <p class="bi bi-thermometer-snow">دما:</p>
                 <p>{{ $item['temperature'] }}°</p>
             </div>
             <div>
-                <p>رطوبت:</p>
+                <p class="bi bi-moisture">رطوبت:</p>
                 <p>{{ $item['humidity'] }}%</p>
             </div>
             <div>
-                <p>CO2:</p>
+                <p class="bi bi-eyedropper">CO2:</p>
                 <p>{{ $item['co2'] }}</p>
             </div>
         </div>

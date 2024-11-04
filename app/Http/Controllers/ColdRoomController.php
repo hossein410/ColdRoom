@@ -15,7 +15,7 @@ class ColdRoomController extends Controller
     public function fetchAndStoreData(): JsonResponse
     {
         $client = new Client();
-        $response = $client->get('API_URL');
+        $response = $client->get('Test.com/api?sensorid=1234&temp=28&humidity=86&nh3=1500');
         $data = json_decode($response->getBody(), true);
 
         foreach ($data as $item) {
