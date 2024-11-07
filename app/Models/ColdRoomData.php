@@ -13,6 +13,8 @@ class ColdRoomData extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
+        'title',
         'temperature',
         'humidity',
         'co2'

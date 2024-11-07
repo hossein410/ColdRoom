@@ -17,3 +17,4 @@ use App\Http\Controllers\ColdRoomController;
 
 Route::get('/fetch-data', [ColdRoomController::class, 'fetchAndStoreData']);
 Route::get('/', [ColdRoomController::class, 'showData']);
+Route::get('/show', [ColdRoomController::class, 'showData']);

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ColdRoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::get('/cold-room-data', [ColdRoomController::class, 'store'])->middleware('auth');
+
+
+Route:: get('/cold-room-data', [ColdRoomController::class, 'store']);
+

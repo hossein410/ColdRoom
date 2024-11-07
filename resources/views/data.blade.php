@@ -33,6 +33,24 @@
             text-align: right;
             transition: transform 0.3s;
         }
+        .title {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .title1{
+
+            flex-direction: column-reverse;
+        }
+        .id{
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+            display:inline-list-item;
+        }
+
 
         .grid-item:hover {
             transform: scale(1.02);
@@ -70,6 +88,10 @@
 <div class="grid-container">
     @foreach ($data as $item)
         <div class="grid-item" onclick="goToPage('{{ $item['id'] }}')">
+            <div class="title1">
+{{--                <div class="id">{{$item['id']}}</div>--}}
+                <h3 class="title">{{$item['title']}}:</h3>
+            </div>
             <div>
                 <p class="bi bi-thermometer-snow">دما:</p>
                 <p>{{ $item['temperature'] }}°</p>

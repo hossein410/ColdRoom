@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\FetchAndStoreDataAction;
+use App\Actions\ShowColdRoomDataAction;
+use App\Actions\StoreColdRoomDataAction;
+use App\Http\Requests\StoreColdRoomRequest;
 use App\Models\ColdRoomData;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
@@ -9,30 +13,23 @@ use Illuminate\Http\JsonResponse;
 
 class ColdRoomController extends Controller
 {
-    /**
-     * @throws GuzzleException
-     */
+
     public function fetchAndStoreData(): JsonResponse
     {
-        $client = new Client();
-        $response = $client->get('Test.com/api?sensorid=1234&temp=28&humidity=86&nh3=1500');
-        $data = json_decode($response->getBody(), true);
-
-        foreach ($data as $item) {
-            ColdRoomData::create([
-                'temperature' => $item['temperature'],
-                'humidity' => $item['humidity'],
-                'co2' => $item['co2'],
-            ]);
-        }
-
-        return response()->json(['message' => 'Data stored successfully']);
+        return FetchAndStoreDataAction::run();
     }
+
 
     public function showData()
     {
-        $data = ColdRoomData::all();
+        return ShowColdRoomDataAction::run();
+    }
 
-        return view('data', compact('data'));
+
+    public function store(StoreColdRoomRequest $request): JsonResponse
+    {
+        $validatedData = $request->validated();
+
+        return StoreColdRoomDataAction::run($validatedData);
     }
 }
