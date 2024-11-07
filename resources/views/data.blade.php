@@ -43,13 +43,13 @@
 
             flex-direction: column-reverse;
         }
-        .id{
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            text-align: center;
-            display:inline-list-item;
-        }
+        /*.id{*/
+        /*    padding: 10px;*/
+        /*    border-radius: 5px;*/
+        /*    border: 1px solid #ddd;*/
+        /*    text-align: center;*/
+        /*    display:inline-list-item;*/
+        /*}*/
 
 
         .grid-item:hover {
