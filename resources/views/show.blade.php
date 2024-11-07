@@ -197,7 +197,7 @@
             border: 8px solid #ddd;
             border-radius: 50%;
             background-color: #fff;
-            box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 0.1);
+            box-shadow:  20px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
