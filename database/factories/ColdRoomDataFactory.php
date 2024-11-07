@@ -17,10 +17,11 @@ class ColdRoomDataFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=>$this->faker->title(),
-            'temperature' => $this->faker->numberBetween(-10, 30),
+            'sensorId' => $this->faker->uuid(),
+            'title'    =>$this->faker->title(),
+            'temp'     => $this->faker->numberBetween(-10, 30),
             'humidity' => $this->faker->numberBetween(0, 100),
-            'co2' => $this->faker->numberBetween(300, 1000),
+            'co2'      => $this->faker->numberBetween(300, 1000),
         ];
     }
 }

@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('cold_room_data', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->float('temperature');
+            $table->string('sensorId');
+            $table->string('title');
+            $table->float('temp');
             $table->float('humidity');
             $table->integer('co2');
             $table->timestamps();

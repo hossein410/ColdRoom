@@ -12,8 +12,9 @@ class ShowColdRoomDataAction
 
     public function handle(): View
     {
-        $data = ColdRoomData::all();
-
-        return view('data', compact('data'));
+        $latestData = ColdRoomData::latest('created_at')
+        ->groupBy('sensorId')
+        ->get();
+        return view('show', compact('latestData'));
     }
 }

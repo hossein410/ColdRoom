@@ -14,8 +14,9 @@ class ColdRoomData extends Model
 
     protected $fillable = [
         'id',
+        'sensorId',
         'title',
-        'temperature',
+        'temp',
         'humidity',
         'co2'
     ];

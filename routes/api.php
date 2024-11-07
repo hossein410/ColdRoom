@@ -19,8 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::get('/cold-room-data', [ColdRoomController::class, 'store'])->middleware('auth');
-
-
 Route:: get('/cold-room-data', [ColdRoomController::class, 'store']);
 

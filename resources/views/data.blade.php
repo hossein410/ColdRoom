@@ -93,8 +93,12 @@
                 <h3 class="title">{{$item['title']}}:</h3>
             </div>
             <div>
-                <p class="bi bi-thermometer-snow">دما:</p>
-                <p>{{ $item['temperature'] }}°</p>
+                <p class=""> سنسور آی دی: </p>
+                <p>{{ $item['sensorId'] }}</p>
+            </div>
+            <div>
+                <p class="bi bi-thermometer-snow">دما: </p>
+                <p>{{ $item['temp'] }}°</p>
             </div>
             <div>
                 <p class="bi bi-moisture">رطوبت:</p>

@@ -22,9 +22,9 @@ class StoreColdRoomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id'          => 'required|integer',
-            'title'       => 'string',
-            'temperature' => 'required|numeric',
+            'sensorId'    => 'required|string',
+            'title'       => 'required|string',
+            'temp'        => 'required|numeric',
             'humidity'    => 'required|numeric',
             'co2'         => 'required|numeric',
         ];

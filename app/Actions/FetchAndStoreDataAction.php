@@ -33,11 +33,10 @@ class FetchAndStoreDataAction
             DB::transaction(function () use ($data) {
                 foreach ($data as $item) {
                     ColdRoomData::updateOrCreate(
-                        ['SensorId' => $item['id']],
-                        [
-                            'temp' => $item['temp'],
+                        ['id'          => $item['id']],
+                        ['temp'        => $item['temp'],
                             'humidity' => $item['humidity'],
-                            'co2' => $item['co2'],
+                            'co2'      => $item['co2'],
                         ]
                     );
                 }
